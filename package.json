@@ -32,7 +32,6 @@
         "ts-node": "ts-node src/am-i-shadowbanned.ts",
         "build": "tsc",
         "travis-deploy-once": "travis-deploy-once",
-        "prepush": "npm run test:prod && npm run build",
         "commitmsg": "validate-commit-msg"
     },
     "lint-staged": {
