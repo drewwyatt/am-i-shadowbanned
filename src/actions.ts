@@ -30,6 +30,12 @@ const reportResults = (usernameResults: ReadonlyArray<[Username, boolean]>, file
                 writeResultsToFile(okay, `${filePrefix}.csv`),
                 writeResultsToFile(shadowBanned, `${filePrefix}.shadowbanned.csv`),
             ])
+            spinner.stop()
+            console.log(
+                chalk.bgGreen.white(
+                    `Results written to "${filePrefix}.csv" and "${filePrefix}.shadowbanned.csv"`,
+                ),
+            )
         } catch (error) {
             spinner.stop()
             console.log(chalk.bgRed.white('Error writing results files. Dumpinh error...'))
@@ -55,6 +61,7 @@ const writeResultsToFile = async (results: ReadonlyArray<Username>, file: string
     const spinner = ora(`Writing results to ${file}...`).start()
     return new Promise((res, rej) => {
         writeFile(file, results.join('\n'), error => {
+            spinner.stop()
             if (error) {
                 rej(error)
             } else {
