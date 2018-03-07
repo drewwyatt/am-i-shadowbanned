@@ -1,6 +1,6 @@
 {
     "name": "am-i-shadowbanned",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Reddit username validator",
     "keywords": ["reddit"],
     "main": "dist/lib/am-i-shadowbanned.js",
@@ -81,6 +81,7 @@
         "replace-in-file": "^3.0.0-beta.2",
         "rimraf": "^2.6.1",
         "semantic-release": "^12.4.1",
+        "travis-deploy-once": "^4.3.4",
         "ts-jest": "^22.0.0",
         "ts-node": "^5.0.1",
         "tslint": "^5.8.0",
@@ -88,8 +89,7 @@
         "tslint-config-standard": "^7.0.0",
         "typedoc": "^0.11.0",
         "typescript": "^2.6.2",
-        "validate-commit-msg": "^2.12.2",
-        "travis-deploy-once": "^4.3.4"
+        "validate-commit-msg": "^2.12.2"
     },
     "dependencies": {
         "@types/commander": "^2.12.2",
@@ -100,6 +100,7 @@
         "axios": "^0.18.0",
         "chalk": "^2.3.2",
         "commander": "^2.14.1",
+        "core-js": "^2.5.3",
         "inquirer": "^5.1.0",
         "ora": "^2.0.0"
     }
