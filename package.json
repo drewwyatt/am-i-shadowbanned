@@ -1,15 +1,12 @@
 {
     "name": "am-i-shadowbanned",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "description": "Reddit username validator",
-    "keywords": [
-        "reddit"
-    ],
+    "keywords": ["reddit"],
     "main": "dist/lib/am-i-shadowbanned.js",
+    "bin": "dist/lib/am-i-shadowbanned.js",
     "typings": "dist/types/am-i-shadowbanned.d.ts",
-    "files": [
-        "dist"
-    ],
+    "files": ["dist"],
     "author": "Drew Wyatt <drew.j.wyatt@gmail.com>",
     "repository": {
         "type": "git",
@@ -36,10 +33,7 @@
         "build": "tsc"
     },
     "lint-staged": {
-        "{src,test}/**/*.ts": [
-            "prettier",
-            "git add"
-        ]
+        "{src,test}/**/*.ts": ["prettier", "git add"]
     },
     "config": {
         "commitizen": {
@@ -47,7 +41,8 @@
         },
         "validate-commit-msg": {
             "types": "conventional-commit-types",
-            "helpMessage": "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
+            "helpMessage":
+                "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
         }
     },
     "jest": {
@@ -55,15 +50,8 @@
             ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
         },
         "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-        "moduleFileExtensions": [
-            "ts",
-            "tsx",
-            "js"
-        ],
-        "coveragePathIgnorePatterns": [
-            "/node_modules/",
-            "/test/"
-        ],
+        "moduleFileExtensions": ["ts", "tsx", "js"],
+        "coveragePathIgnorePatterns": ["/node_modules/", "/test/"],
         "coverageThreshold": {
             "global": {
                 "branches": 90,

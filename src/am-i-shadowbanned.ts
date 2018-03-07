@@ -16,7 +16,9 @@ commander
     .description('Parse a CSV file containing usernames and check for shadowbanned entries')
     .action(() => {
         console.log(chalk.yellow('=========*** Am I Shadowbanned? ***=========='))
-        inquirer.prompt(questions).then(answers => actions.parseFile(answers.fileLocation))
+        inquirer
+            .prompt(questions)
+            .then(answers => actions.parseFile(answers.inputFile, answers.outputFile))
     })
 
 commander.parse(['', '', 'validate'])
