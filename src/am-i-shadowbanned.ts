@@ -19,8 +19,4 @@ commander
         inquirer.prompt(questions).then(answers => actions.parseFile(answers.fileLocation))
     })
 
-commander.parse([
-    '/Users/drew.wyatt/.nvm/versions/node/v9.7.1/bin/node',
-    '/Users/drew.wyatt/Projects/am-i-shadowbanned',
-    'validate',
-])
+commander.parse(['', '', 'validate'])
