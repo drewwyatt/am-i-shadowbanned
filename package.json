@@ -1,6 +1,6 @@
 {
     "name": "am-i-shadowbanned",
-    "version": "0.1.0",
+    "version": "0.0.0-development",
     "description": "Reddit username validator",
     "keywords": ["reddit"],
     "main": "dist/lib/am-i-shadowbanned.js",
@@ -30,7 +30,8 @@
         "precommit": "lint-staged",
         "start": "nodemon --exec ts-node -- src/am-i-shadowbanned.ts",
         "ts-node": "ts-node src/am-i-shadowbanned.ts",
-        "build": "tsc"
+        "build": "tsc",
+        "travis-deploy-once": "travis-deploy-once"
     },
     "lint-staged": {
         "{src,test}/**/*.ts": ["prettier", "git add"]
@@ -86,7 +87,8 @@
         "tslint-config-standard": "^7.0.0",
         "typedoc": "^0.11.0",
         "typescript": "^2.6.2",
-        "validate-commit-msg": "^2.12.2"
+        "validate-commit-msg": "^2.12.2",
+        "travis-deploy-once": "^4.3.4"
     },
     "dependencies": {
         "@types/commander": "^2.12.2",
