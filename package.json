@@ -1,6 +1,6 @@
 {
     "name": "am-i-shadowbanned",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Reddit username validator",
     "keywords": ["reddit"],
     "main": "dist/lib/am-i-shadowbanned.js",
@@ -31,8 +31,7 @@
         "start": "nodemon --exec ts-node -- src/am-i-shadowbanned.ts",
         "ts-node": "ts-node src/am-i-shadowbanned.ts",
         "build": "tsc",
-        "travis-deploy-once": "travis-deploy-once",
-        "commitmsg": "validate-commit-msg"
+        "travis-deploy-once": "travis-deploy-once"
     },
     "lint-staged": {
         "{src,test}/**/*.ts": ["prettier", "git add"]
@@ -40,11 +39,6 @@
     "config": {
         "commitizen": {
             "path": "node_modules/cz-conventional-changelog"
-        },
-        "validate-commit-msg": {
-            "types": "conventional-commit-types",
-            "helpMessage":
-                "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
         }
     },
     "jest": {

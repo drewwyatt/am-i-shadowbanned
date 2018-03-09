@@ -5,12 +5,18 @@ import { readFileSync, writeFile } from 'fs'
 
 type Username = string
 
+const flatten = (data: string[], unflattened: any): string[] => [...data, ...unflattened[0]]
+
 export const parseFile = (inputFile: string, outputFilePrefix: string) => {
     ;(async () => {
         const spinner = ora('Reading file...').start()
         try {
             const file = readFileSync(inputFile, 'utf8')
-            const usernames = file.split('\n')
+            const usernames = file
+                .split('\n')
+                .map(line => line.split(','))
+                .reduce(flatten, [])
+                .map(username => username.replace(/\*/g, ''))
             spinner.stop()
             console.log(chalk.bgGreen.white('File parsed'))
             reportResults(await Promise.all(usernames.map(checkUsername)), outputFilePrefix)
